@@ -1,7 +1,12 @@
 import React, {PureComponent} from 'react'
 import {connect} from 'react-redux'
+import {fetchAllJobs} from '../../actions/jobs'
 
 class HomePage extends PureComponent {
+
+  componentWillMount = () => {
+    this.props.fetchAllJobs()
+  }
 
 	render() {
 		return (
@@ -18,4 +23,4 @@ const mapStateToProps = function (state) {
 	}
 }
 
-export default connect(mapStateToProps)(HomePage)
+export default connect(mapStateToProps, {fetchAllJobs})(HomePage)
