@@ -10,7 +10,7 @@ export default function (state = {}, {type, payload}) {
       return payload
     case DELETE_JOB:
       return payload
-		default:
+    default:
       return state
 	}
 }
